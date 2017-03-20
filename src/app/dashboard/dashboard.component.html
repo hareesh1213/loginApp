@@ -1,0 +1,42 @@
+<div>
+	<h2>Welcome User</h2>
+	<div class="dash-buttons">
+	<button style="float: right"  class="btn-warning btn-lg" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
+	<a routerLink="/addEmploye" style="float: right" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Add Employe 
+        </a>
+	</div>
+	<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Company</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>website</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empData;let i=index;let last = last">
+      <th scope="row">{{i+1}}</th>
+      <td>{{emp.firstName}}</td>
+      <td>{{emp.lastName}}</td>
+      <td>{{emp.address}}</td>
+      <td>{{emp.city}}</td>
+      <td>{{emp.state}}</td>
+      <td>{{emp.company}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.mobile}}</td>
+      <td>{{emp.website}}</td>
+      <td><a class="btn btn-danger" (click)="deleteEmp(emp.id)"><span class="glyphicon glyphicon-trash"></span> Delete </a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<app-model></app-model>
